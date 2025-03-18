@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahi's Cute World</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFF3F6;
+            color: #4A4A4A;
+            margin: 0;
+            padding: 40px 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #FF9999;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #FF9999;
+            margin: 40px 0 20px;
+            text-align: center;
+            position: relative;
+        }
+        h2::before {
+            content: "✨";
+            margin-right: 10px;
+        }
+        h2::after {
+            content: "✨";
+            margin-left: 10px;
+        }
+        .section {
+            margin-bottom: 60px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            text-align: center;
+            padding: 15px;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px; /* Square with curved edges */
+            clip-path: inset(0% round 15px); /* Ensures curved edges */
+        }
+        .card p {
+            margin: 10px 0 0;
+            font-size: 0.9rem;
+            color: #4A4A4A;
+        }
+        .heart {
+            position: absolute;
+            font-size: 14px;
+            color: #FF9999;
+            opacity: 0.7;
+            animation: fall 5s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-50px); opacity: 0.7; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .card-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+            .card img { height: 120px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mahi's Cute World 🌸</h1>
+
+        <!-- Section 1: Top Card -->
+        <div class="section">
+            <h2>Hello Mahi!</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/36/a0/1b/36a01b7cd6b9b455ee0c3fcbefeda1d3.jpg" alt="Mahi">
+                    <p>You're the cutest! 💕</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Food -->
+        <div class="section">
+            <h2>Yummy Food</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/dd/e8/0e/dde80e95abbc23e07e8cccd0563dc151.jpg" alt="Food 1">
+                    <p>Sweet Treats</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/18/1e/b4/181eb4664d9d963789017d584c62e949.jpg" alt="Food 2">
+                    <p>Cozy Snacks</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/aa/97/28/aa972893922602e9d72ac406749c2efd.jpg" alt="Food 3">
+                    <p>Delish Bites</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/59/bb/4e/59bb4e06a53820cf4ee52ad148b219ef.jpg" alt="Food 4">
+                    <p>Tasty Vibes</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/0d/9b/48/0d9b484257740fa9b99133e7aacd5004.jpg" alt="Food 5">
+                    <p>Happy Eats</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/46/f8/94/46f89417cf9204be1e8ebcc50546c547.jpg" alt="Food 6">
+                    <p>Foodie Love</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Is This Mahi? -->
+        <div class="section">
+            <h2>Is This Mahi?</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/ff/a6/20/ffa620187dc116889e161f8f7cdcd192.jpg" alt="Mahi 1">
+                    <p>Cute Moment</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/5c/6b/a5/5c6ba57f7c2ce60571068baeb0f7f5bb.jpg" alt="Mahi 2">
+                    <p>Adorable!</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/0e/94/31/0e94312c0354c790a85f421107b154c0.jpg" alt="Mahi 3">
+                    <p>So Sweet</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/18/65/2d/18652df8cc71938dbfbdb9e0ba07cd99.jpg" alt="Mahi 4">
+                    <p>Too Cute</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/65/fb/1c/65fb1c727740486f5efab75541575d25.jpg" alt="Mahi 5">
+                    <p>Lovely</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/db/f7/ae/dbf7ae89e5bc39f75ecda1b2f32f2d40.jpg" alt="Mahi 6">
+                    <p>Precious</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/46/ab/ac/46abacd13f32a6e070dd0fc92378444e.jpg" alt="Mahi 7">
+                    <p>Charming</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/a1/bc/f6/a1bcf683dd90b243d7ba3b62ab9680b1.jpg" alt="Mahi 8">
+                    <p>Darling</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/25/79/e4/2579e42154f214cce12c289a04f5f604.jpg" alt="Mahi 9">
+                    <p>Sparkly</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/ed/9b/38/ed9b38b5e588f2eaa776aef81c9d1c19.jpg" alt="Mahi 10">
+                    <p>Heartfelt</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/ec/53/22/ec532279079cfa9cb3ce602ea037c3d2.jpg" alt="Mahi 11">
+                    <p>Playful</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/8e/11/d3/8e11d30afcdb03069880d8cf0b2d8168.jpg" alt="Mahi 12">
+                    <p>Joyful</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/36/64/e9/3664e99d1d13154a39d8ffcbb8270e44.jpg" alt="Mahi 13">
+                    <p>Happy</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Study -->
+        <div class="section">
+            <h2>Study Time</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/3d/44/88/3d44887c6ce4c503584fc2f40b8b91be.jpg" alt="Study 1">
+                    <p>Focus Mode</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/a8/a2/96/a8a29686579d47a934f651edcec63596.jpg" alt="Study 2">
+                    <p>Smart Vibes</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/8d/1f/b9/8d1fb9c36c1cee7481aeb18c190d9455.jpg" alt="Study 3">
+                    <p>Study Goals</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/a8/93/2c/a8932c54ae6717bcc3108ab2a1b1138c.jpg" alt="Study 4">
+                    <p>Brainy Days</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/65/fb/1c/65fb1c727740486f5efab75541575d25.jpg" alt="Study 5">
+                    <p>Learn Cute</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/d9/7b/a5/d97ba5ce26cecfcd3e423243fcad911c.jpg" alt="Study 6">
+                    <p>Study Love</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Exercise -->
+        <div class="section">
+            <h2>Exercise Fun</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/93/47/83/934783f4c483b0330f5927a745589f2e.jpg" alt="Exercise 1">
+                    <p>Active Mahi</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/59/08/eb/5908ebab90897b7ec574df4e34fe052a.jpg" alt="Exercise 2">
+                    <p>Fit & Fun</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/23/f3/7f/23f37f67d537aacd8798093e5983a6e2.jpg" alt="Exercise 3">
+                    <p>Move It</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/94/32/ef/9432ef84611ea00c5cd1d8de5211ac64.jpg" alt="Exercise 4">
+                    <p>Stretchy</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/b2/23/68/b22368f8db261b08e6b08ed826a9d2cb.jpg" alt="Exercise 5">
+                    <p>Strong</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/ac/bb/8a/acbb8a915b5a1c1e0ec4abb276ca92fd.jpg" alt="Exercise 6">
+                    <p>Energetic</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quotes Section -->
+        <div class="section">
+            <h2>Favorite Quotes</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/32/cc/ea/32ccea6e71af69e25f174ee8e4321594.jpg" alt="Quote 1">
+                    <p>Shine Bright</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/af/63/36/af6336e346f23f1aff709d36530f6cfd.jpg" alt="Quote 2">
+                    <p>Be Kind</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/f4/69/f7/f469f72bc96d86d26572a8580f2e443f.jpg" alt="Quote 3">
+                    <p>Stay Happy</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/01/73/fc/0173fc52559b0447f909d8a95d68a0fc.jpg" alt="Quote 4">
+                    <p>Love Life</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/3f/fc/a6/3ffca6f427bfd9605263b9645e18fb62.jpg" alt="Quote 5">
+                    <p>Keep Going</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/25/0b/75/250b75a5303ea22e649cf4e32198a51c.jpg" alt="Quote 6">
+                    <p>Dream Big</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/74/1f/46/741f46eed75ab2ba2afb25f2dc0bebbe.jpg" alt="Quote 7">
+                    <p>Be You</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/13/6e/06/136e065131b6fc7a7c461d74a7767b11.jpg" alt="Quote 8">
+                    <p>Stay Cute</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/eb/10/77/eb1077926bede4240485b8768fe7b30f.jpg" alt="Quote 9">
+                    <p>Smile More</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/d8/a0/fb/d8a0fb9d3e453a925c436ac59b1764aa.jpg" alt="Quote 10">
+                    <p>Be Brave</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/14/9b/13/149b136f65e618e3a44e787855062074.jpg" alt="Quote 11">
+                    <p>Stay Soft</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/bf/59/27/bf5927f10073dee3f94a758618698045.jpg" alt="Quote 12">
+                    <p>Keep Sparkling</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/64/47/be/6447be6659130e01440c4db8798c5090.jpg" alt="Quote 13">
+                    <p>Love Always</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/474x/26/26/d4/2626d4c4c85bfe6528abf76a980d1beb.jpg" alt="Quote 14">
+                    <p>Be Gentle</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/c9/78/c6/c978c62bc805c5498e40138e99e7f5a2.jpg" alt="Quote 15">
+                    <p>Stay Strong</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/236x/a0/0f/ff/a00fff7f867cad95328c896adb6f57d1.jpg" alt="Quote 16">
+                    <p>Be Happy</p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/e6/2b/e3/e62be3c90c679d99578903638d6058a7.jpg" alt="Quote 17">
+                    <p>Shine On</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Heart Animation
+            setInterval(createHeart, 2000);
+
+            // Card Hover Effect
+            $('.card').on('mouseenter', function() {
+                $(this).css('transform', 'translateY(-5px) scale(1.02)');
+            }).on('mouseleave', function() {
+                $(this).css('transform', 'translateY(0) scale(1)');
+            });
+        });
+
+        function createHeart() {
+            const heart = $('<div class="heart">♥</div>');
+            heart.css({
+                left: Math.random() * 100 + 'vw',
+                top: '-50px'
+            });
+            $('body').append(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+    </script>
+</body>
+</html>
