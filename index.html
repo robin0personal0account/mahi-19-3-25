@@ -69,10 +69,10 @@
         }
         .card img {
             width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 15px; /* Square with curved edges */
-            clip-path: inset(0% round 15px); /* Ensures curved edges */
+            max-height: 250px; /* Increased max-height to show more of the image */
+            object-fit: contain; /* Changed to contain to show full image without cropping */
+            border-radius: 15px;
+            clip-path: inset(0% round 15px);
         }
         .card p {
             margin: 10px 0 0;
@@ -96,7 +96,7 @@
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
             .card-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
-            .card img { height: 120px; }
+            .card img { max-height: 200px; } /* Adjusted for smaller screens */
         }
     </style>
 </head>
@@ -345,10 +345,7 @@
 
     <script>
         $(document).ready(function() {
-            // Heart Animation
             setInterval(createHeart, 2000);
-
-            // Card Hover Effect
             $('.card').on('mouseenter', function() {
                 $(this).css('transform', 'translateY(-5px) scale(1.02)');
             }).on('mouseleave', function() {
